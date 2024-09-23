@@ -1,10 +1,13 @@
 pipeline {
     agent any
-    tools { jdk 'JAVA_HOME', maven 'M2_HOME' }
+    tools { 
+        jdk 'JAVA_HOME' 
+        maven 'M2_HOME' 
+    }
     stages {
         stage('GIT') {
             steps {
-                git branch: 'master', url: 'https://github.com/FarahHend/CI-CD.git'
+                git branch: 'main', url: 'https://github.com/FarahHend/CI-CD.git'
             }
         }
         stage('Compile Stage') {
